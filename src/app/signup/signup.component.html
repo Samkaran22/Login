@@ -1,0 +1,14 @@
+<div class="login-page">
+    <div class="form">
+      <form [formGroup]="login" class="login-form" (ngsubmit)="Getdata()">
+        <input type="text" placeholder="Username" formControlName="name"/>
+        <span *ngIf="vname && vname.invalid && vname.touched" style="color:red">Enter Valid Username</span>
+        <input type="email" placeholder="Email" formControlName="email"/>
+        <span *ngIf="vemail && vemail.invalid && vemail.touched" style="color:red">Enter Valid Email</span>
+        <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" type="password" placeholder="New password" formControlName="password"/>
+        <span *ngIf="vpwd && vpwd.invalid && vpwd.touched" style="color:red">Enter Valid password</span>
+        <button>create</button>
+        <p class="message">Already registered? <a href="javascript:void(0);" routerLink="/">Sign In</a></p>
+      </form>
+    </div>
+  </div>

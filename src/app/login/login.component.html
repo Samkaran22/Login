@@ -1,0 +1,12 @@
+<div class="login-page">
+  <div class="form">
+    <form [formGroup]="login" class="login-form" (ngsubmit)="Getdata()">
+      <input type="text" placeholder="username" formControlName="name"/>
+      <span *ngIf="vname && vname.invalid && vname.touched" style="color:red">Enter Valid Username</span>
+      <input type="password" placeholder="password" formControlName="password"/>
+      <span *ngIf="vpassword && vpassword.invalid && vpassword.touched" style="color:red">Enter Valid password</span>
+      <button [disabled]="login.invalid">login</button>
+      <p class="message">Not registered? <a href="javascript:void(0);" routerLink="/signup">Create an account</a></p>
+    </form>
+  </div>
+</div>
